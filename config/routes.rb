@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
 	resources :sessions
 
-	get "logout" => "sessions#destroy", :as => "signout"
-	get "login" => "session#new", :as => "login"
+	# get "logout" => "sessions#destroy", :as => "signout"
+	delete "/sessions" => "sessions#destroy", :as => "logout"
+	get "/sessions" => "session#new", :as => "login"
 end
